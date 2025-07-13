@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Saludable</title>
+    <title>Nutrimarket- Shop</title>
+    <link rel="stylesheet" href="css/stylesTienda.css">
 </head>
 <body>
-    <h1>Tienda NutriMarket</h1>
-    <script src="./tienda-sanita.js"></script>
+    <main>
+        <h1>Dietética Nutrimarket</h1>
+        <h2>Productos</h2>
+        <!--muestro lista de articulos-->
+        <ol id="listaProd"></ol>
+        <!--ejecuto carrito-->
+        <h3>-Carrito de compra-</h3>
+        <ul id="listaCarrito"></ul>
+        <!--sumo total-->
+        <div id="total"></div>
+        <!--finalizacion de compra-->
+        <div id="agradecimiento"></div>
+        <form id="formularioCompra">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre">
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input tye="text" name="apellido" id="apellido">
+            </div>
+            <div>
+                <!--boton de compra-->
+                <input type="submit" value="Comprar" id="btnCompra">
+            </div>
+        </form>
+    <script src="./tiendaSanita.js"></script>
+    </main>
 </body>
 </html>
