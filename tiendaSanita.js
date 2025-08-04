@@ -1,5 +1,5 @@
 //array de productos
-const productos = [ 
+/*const productos = [ 
     {nombre: "Almendras- 500g", precio:1500, id: 1},
     {nombre: "Nueces- 1kg" , precio:2700, id: 2},
     {nombre: "Avena- 200g" , precio:1000, id: 3},
@@ -8,10 +8,65 @@ const productos = [
     {nombre: "Harina de almendras- 1kg" , precio:1200, id: 6},
     {nombre: "Arroz Integral- 500g" , precio:700, id: 7},
 ]
+    */
+const apiPropio= "../productos.json"
+const listaProd = document.getElementById("productos")
 
+function mostrarProductos (arrayProd){
+        listaProd.innerHTML=""
+        arrayProd.forEach(prod =>{
+            const {nombre, precio, id} = prod
+            //Creo elementos
+    const li = document.createElement("li")
+    const div = document.createElement("div")
+    const btn = document.createElement("button")
+    // Modifico
+    li.id = prod.id
+    div.innerText = `${prod.nombre} - $${prod.precio}`
+    btn.innerText = "Agregar al carrito"
+    btn.addEventListener("click",()=>{
+        agregarCarrito(prod)
+        Toastify({
+        text: `Agregado ${prod.nombre} al carrito`,
+        duration: 5000,
+        newWindow: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+        background: "linear-gradient(to right, #6a964c, #efdc97)",
+        }
+        })
+        .showToast();
+    })
+    //agregar al DOM
+    li.appendChild(div)
+    li.appendChild(btn)
+    listaProd.appendChild(li)
+    })
+}
+
+async function buscarProd() {
+    try {
+        const datosJSON=await fetch(apiPropio)
+        const datos=await datosJSON.json()
+        mostrarProductos(datos.recordings)
+    } catch (error) {
+        console.warn(error)
+    }
+    return datos
+}
+
+buscarProd()
+
+fetch (apiPropio).then(respuesta=>{
+    return respuesta.json()
+}).then (respuesta=>{
+    mostrarProductos(respuesta.recordings)
+})
 
 //variables del DOM
-const listaProd = document.getElementById("listaProd")
+//const listaProd = document.getElementById("productos")
 const listaCarrito = document.getElementById("listaCarrito")
 const formularioCompra = document.getElementById("formularioCompra")
 
@@ -19,7 +74,7 @@ const formularioCompra = document.getElementById("formularioCompra")
 
 //-listado de productos
 
-function mostrarProd(){
+/*function mostrarProd(){
 listaProd.innerHTML = ""
     productos.forEach(prod=>{
     //Creo elementos
@@ -50,7 +105,7 @@ listaProd.innerHTML = ""
     li.appendChild(btn)
     listaProd.appendChild(li)
     })
-}
+}*/
 
 //-carrito de compra
 
