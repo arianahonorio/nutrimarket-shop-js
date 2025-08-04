@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutrimarket- Shop</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/stylesTienda.css">
 </head>
 <body>
@@ -11,14 +12,13 @@
         <h1>Dietética Nutrimarket</h1>
         <h2>Productos</h2>
         <!--muestro lista de articulos-->
-        <ol id="listaProd"></ol>
+        <ul id="productos"></ul>
         <!--ejecuto carrito-->
         <h3>-Carrito de compra-</h3>
         <ul id="listaCarrito"></ul>
         <!--sumo total-->
         <div id="total"></div>
         <!--finalizacion de compra-->
-        <div id="agradecimiento"></div>
         <form id="formularioCompra">
             <div>
                 <label for="nombre">Nombre:</label>
@@ -33,6 +33,8 @@
                 <input type="submit" value="Comprar" id="btnCompra">
             </div>
         </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./tiendaSanita.js"></script>
     </main>
 </body>
