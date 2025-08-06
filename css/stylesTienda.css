@@ -58,3 +58,17 @@ div{
     padding-top: 10px;
     margin-left: 20px;
 }
+
+#btnCompra{
+    background-color: #6a964c;
+    color: white;
+    padding: 2px 2px 2px 2px;
+    font-size: 20px;
+    border: 2px solid #6a964c ;
+    border-radius: 20px 20px;
+}
+#btnCompra:hover{
+    border: 2px solid #efdc97;
+    color: #efdc97;
+}
+
